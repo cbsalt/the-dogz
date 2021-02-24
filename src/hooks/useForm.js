@@ -9,6 +9,10 @@ const schema = {
     regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
     message: 'Senha deve conter pelo menos 8 caracteres, 1 caracter númerico, 1 caracter minúsculo e 1 caracter maiúsculo.',
   },
+  number: {
+    regex: /^\d+$/,
+    message: 'Utilize apenas números',
+  },
 };
 
 const useForm = (type) => {
