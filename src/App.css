@@ -25,7 +25,7 @@ ul, li {
 
 img {
   display: block;
-  min-width: 100%;
+  max-width: 100%;
 }
 
 button, input {
@@ -41,9 +41,13 @@ a {
 }
 
 .container {
-  min-width: 50rem;
+  max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.mainContainer {
+  margin-top: 4rem;
 }
 
 .title {

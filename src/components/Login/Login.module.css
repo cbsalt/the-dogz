@@ -25,6 +25,6 @@
     display: none;
   }
   .forms {
-    min-width: 100%;
+    max-width: 100%;
   }
 }
