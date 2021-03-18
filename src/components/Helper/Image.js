@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Image.module.css';
 
 const Image = ({ alt, ...props }) => {
@@ -18,3 +20,7 @@ const Image = ({ alt, ...props }) => {
 };
 
 export default Image;
+
+Image.propTypes = {
+  alt: PropTypes.string.isRequired,
+};

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import useFetch from '../../hooks/useFetch';
 import Error from '../Helper/Error';
@@ -44,3 +45,13 @@ const PhotoCommentsForm = ({ id, setComments, single }) => {
 };
 
 export default PhotoCommentsForm;
+
+PhotoCommentsForm.defaultProps = {
+  single: false,
+};
+
+PhotoCommentsForm.propTypes = {
+  id: PropTypes.number.isRequired,
+  setComments: PropTypes.func.isRequired,
+  single: PropTypes.bool,
+};

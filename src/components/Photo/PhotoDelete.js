@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { PHOTO_DELETE } from '../../api';
 import useFetch from '../../hooks/useFetch';
@@ -33,3 +34,7 @@ const PhotoDelete = ({ id }) => {
 };
 
 export default PhotoDelete;
+
+PhotoDelete.propTypes = {
+  id: PropTypes.number.isRequired,
+};

@@ -2,6 +2,8 @@ import React, {
   createContext, useCallback, useEffect, useState,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from './api';
 
 export const UserContext = createContext();
@@ -80,4 +82,11 @@ export const UserStorage = ({ children }) => {
       {children}
     </UserContext.Provider>
   );
+};
+
+UserStorage.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.element.isRequired,
+    PropTypes.array.isRequired,
+  ]).isRequired,
 };

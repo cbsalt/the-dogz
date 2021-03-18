@@ -1,6 +1,8 @@
+/* eslint-disable react/destructuring-assignment */
 import React, {
   useContext, useEffect, useRef, useState,
 } from 'react';
+import PropTypes from 'prop-types';
 
 import { UserContext } from '../../UserContext';
 import PhotoCommentsForm from './PhotoCommentsForm';
@@ -42,3 +44,15 @@ const PhotoComments = (props) => {
 };
 
 export default PhotoComments;
+
+PhotoComments.defaultProps = {
+  single: false,
+};
+
+PhotoComments.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.object,
+  ).isRequired,
+  single: PropTypes.bool,
+  id: PropTypes.number.isRequired,
+};

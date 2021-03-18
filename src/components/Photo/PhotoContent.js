@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { UserContext } from '../../UserContext';
 
 import PhotoComments from './PhotoComments';
@@ -40,3 +42,25 @@ const PhotoContent = ({ data, single }) => {
 };
 
 export default PhotoContent;
+
+PhotoContent.defaultProps = {
+  single: false,
+};
+
+PhotoContent.propTypes = {
+  data: PropTypes.shape({
+    photo: PropTypes.shape({
+      id: PropTypes.number,
+      author: PropTypes.string,
+      acessos: PropTypes.number,
+      title: PropTypes.string,
+      peso: PropTypes.string,
+      idade: PropTypes.string,
+      src: PropTypes.string,
+    }).isRequired,
+    comments: PropTypes.arrayOf(
+      PropTypes.object,
+    ),
+  }).isRequired,
+  single: PropTypes.bool,
+};

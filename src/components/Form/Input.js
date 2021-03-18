@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Input.module.css';
 
 const Input = ({
@@ -20,3 +22,18 @@ const Input = ({
 );
 
 export default Input;
+
+Input.defaultProps = {
+  id: null,
+  error: null,
+};
+
+Input.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  onBlur: PropTypes.func.isRequired,
+};

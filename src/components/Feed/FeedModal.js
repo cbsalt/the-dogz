@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import UseFetch from '../../hooks/useFetch';
 import Error from '../Helper/Error';
@@ -33,3 +34,10 @@ const FeedModal = ({ photo, setModalPhoto }) => {
 };
 
 export default FeedModal;
+
+FeedModal.propTypes = {
+  photo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }).isRequired,
+  setModalPhoto: PropTypes.func.isRequired,
+};

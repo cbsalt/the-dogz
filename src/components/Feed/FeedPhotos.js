@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import useFetch from '../../hooks/useFetch';
+import PropTypes from 'prop-types';
 
+import useFetch from '../../hooks/useFetch';
 import { PHOTOS_GET } from '../../api';
 
 import FeedPhotosItem from './FeedPhotosItem';
@@ -41,3 +42,18 @@ const FeedPhotos = ({
 };
 
 export default FeedPhotos;
+
+FeedPhotos.defaultProps = {
+  page: 1,
+  user: 0,
+};
+
+FeedPhotos.propTypes = {
+  page: PropTypes.number,
+  user: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
+  setModalPhoto: PropTypes.func.isRequired,
+  setInfinite: PropTypes.func.isRequired,
+};
