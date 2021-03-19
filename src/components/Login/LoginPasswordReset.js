@@ -38,22 +38,24 @@ const LoginPasswordReset = () => {
   }
 
   return (
-    <div>
+    <>
       <Head title="Reset sua senha" />
-      <h1 className="title">Reset sua senha</h1>
-      <form onSubmit={handleSubmit}>
-        <Input
-          label="Nova senha"
-          type="password"
-          name="password"
-          {...password}
-        />
-        {loading
-          ? <Button disabled>Resetando...</Button>
-          : <Button>Reset</Button>}
-        <Error error={error} />
-      </form>
-    </div>
+      <section className="animeLeft">
+        <h1 className="title">Reset sua senha</h1>
+        <form onSubmit={handleSubmit}>
+          <Input
+            label="Nova senha"
+            type="password"
+            name="password"
+            {...password}
+          />
+          {loading
+            ? <Button disabled>Resetando...</Button>
+            : <Button>Reset</Button>}
+          <Error error={error} />
+        </form>
+      </section>
+    </>
   );
 };
 

@@ -30,7 +30,7 @@ const LoginPasswordForgot = () => {
   return (
     <>
       <Head title="Esqueci minha senha" />
-      <section>
+      <section className="animeLeft">
         <h1 className="title">Perdi minha senha</h1>
         {data ? <p style={{ color: '#4c1' }}>{data}</p> : (
           <form onSubmit={handleSubmit}>

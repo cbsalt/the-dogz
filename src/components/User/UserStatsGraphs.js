@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { VictoryPie, VictoryChart, VictoryBar } from 'victory';
+import useFetch from '../../hooks/useFetch';
+import Error from '../Helper/Error';
+import Loader from '../Helper/Loader';
 import styles from './UserStatsGraphs.module.css';
 
 const UserStatsGraphs = ({ data }) => {
   const [graph, setGraph] = useState([]);
   const [total, setTotal] = useState(0);
+  const {
+    error, loading,
+  } = useFetch();
 
   useEffect(() => {
     const graphData = data.map((item) => ({
@@ -18,6 +24,8 @@ const UserStatsGraphs = ({ data }) => {
     setGraph(graphData);
   }, [data]);
 
+  if (error) return <Error error={error} />;
+  if (loading) return <Loader loading={loading} />;
   return (
     <section className={`${styles.graph} animeLeft`}>
       <div className={`${styles.total} ${styles.graphItem}`}>

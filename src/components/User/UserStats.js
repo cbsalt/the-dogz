@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 
 import Head from '../Helper/Head';
 import Loader from '../Helper/Loader';
@@ -7,7 +7,7 @@ import Error from '../Helper/Error';
 import useFetch from '../../hooks/useFetch';
 import { STATS_GET } from '../../api';
 
-import UserStatsGraphs from './UserStatsGraphs';
+const UserStatsGraphs = lazy(() => import('./UserStatsGraphs'));
 
 const UserStats = () => {
   const {
@@ -28,9 +28,9 @@ const UserStats = () => {
     return (
       <>
         <Head title="Estatísticas" />
-        <div>
+        <Suspense fallback={<div />}>
           <UserStatsGraphs data={data} />
-        </div>
+        </Suspense>
       </>
     );
   }
