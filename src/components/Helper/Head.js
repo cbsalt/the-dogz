@@ -15,7 +15,11 @@ const Head = (props) => {
 
 export default Head;
 
+Head.defaultProps = {
+  description: null,
+};
+
 Head.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };

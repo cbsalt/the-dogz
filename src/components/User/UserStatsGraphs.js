@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { VictoryPie, VictoryChart, VictoryBar } from 'victory';
+import PropTypes from 'prop-types';
+
 import useFetch from '../../hooks/useFetch';
 import Error from '../Helper/Error';
 import Loader from '../Helper/Loader';
@@ -61,3 +63,9 @@ const UserStatsGraphs = ({ data }) => {
 };
 
 export default UserStatsGraphs;
+
+UserStatsGraphs.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.object,
+  ).isRequired,
+};
