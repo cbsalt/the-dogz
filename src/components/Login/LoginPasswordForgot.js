@@ -28,20 +28,21 @@ const LoginPasswordForgot = () => {
   }
 
   return (
-    <section>
+    <>
       <Head title="Esqueci minha senha" />
-      <h1 className="title">Perdi minha senha</h1>
-      {data ? <p style={{ color: '#4c1' }}>{data}</p> : (
-        <form onSubmit={handleSubmit}>
-          <Input label="Email / Usuário" type="text" name="login" {...login} />
-          {loading
-            ? <Button disabled>Enviando...</Button>
-            : <Button>Enviar email de recuperação</Button>}
-          <Error error={error} />
-        </form>
-      )}
-
-    </section>
+      <section>
+        <h1 className="title">Perdi minha senha</h1>
+        {data ? <p style={{ color: '#4c1' }}>{data}</p> : (
+          <form onSubmit={handleSubmit}>
+            <Input label="Email / Usuário" type="text" name="login" {...login} />
+            {loading
+              ? <Button disabled>Enviando...</Button>
+              : <Button>Enviar email de recuperação</Button>}
+            <Error error={error} />
+          </form>
+        )}
+      </section>
+    </>
   );
 };
 

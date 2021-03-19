@@ -22,10 +22,12 @@ const Photo = () => {
   if (loading) return <Loader />;
   if (data) {
     return (
-      <section className="container mainContainer">
+      <>
         <Head title={data.photo.title} />
-        <PhotoContent single data={data} />
-      </section>
+        <section className="container mainContainer">
+          <PhotoContent single data={data} />
+        </section>
+      </>
     );
   }
   return null;

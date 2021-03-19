@@ -46,25 +46,27 @@ const UserPhotoPost = () => {
   }
 
   return (
-    <section className={`${styles.photoPost} animeLeft`}>
+    <>
       <Head title="Poste sua foto" />
-      <form onSubmit={handleSubmit}>
-        <Input label="Nome" type="text" name="nome" {...name} />
-        <Input label="Peso" type="number" name="peso" {...weight} />
-        <Input label="Idade" type="number" name="idade" {...age} />
-        <input className={styles.file} type="file" name="img" id="img" onChange={handlePostImg} />
-        {loading ? <Button disabled>Enviando</Button> : <Button>Enviar</Button>}
-        <Error error={error} />
-      </form>
-      <div>
-        {img.preview && (
-        <div
-          className={styles.preview}
-          style={{ backgroundImage: `url('${img.preview}')` }}
-        />
-        )}
-      </div>
-    </section>
+      <section className={`${styles.photoPost} animeLeft`}>
+        <form onSubmit={handleSubmit}>
+          <Input label="Nome" type="text" name="nome" {...name} />
+          <Input label="Peso" type="number" name="peso" {...weight} />
+          <Input label="Idade" type="number" name="idade" {...age} />
+          <input className={styles.file} type="file" name="img" id="img" onChange={handlePostImg} />
+          {loading ? <Button disabled>Enviando</Button> : <Button>Enviar</Button>}
+          <Error error={error} />
+        </form>
+        <div>
+          {img.preview && (
+          <div
+            className={styles.preview}
+            style={{ backgroundImage: `url('${img.preview}')` }}
+          />
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 

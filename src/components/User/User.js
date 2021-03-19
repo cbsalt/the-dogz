@@ -13,16 +13,18 @@ const User = () => {
   const { data } = useContext(UserContext);
 
   return (
-    <section className="container">
+    <>
       <Head title="Minha conta" />
-      <UserHeader />
-      <Routes>
-        <Route path="/" element={<Feed user={data.id} />} />
-        <Route path="/post" element={<UserPhotoPost />} />
-        <Route path="/statistics" element={<UserStats />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </section>
+      <section className="container">
+        <UserHeader />
+        <Routes>
+          <Route path="/" element={<Feed user={data.id} />} />
+          <Route path="/post" element={<UserPhotoPost />} />
+          <Route path="/statistics" element={<UserStats />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </section>
+    </>
   );
 };
 

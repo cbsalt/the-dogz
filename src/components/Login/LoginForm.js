@@ -25,22 +25,24 @@ const LoginForm = () => {
   }
 
   return (
-    <section className="animeLeft">
+    <>
       <Head title="Login" />
-      <h1 className="title">Login</h1>
-      <form className={styles.form} action="" onSubmit={handleSubmit}>
-        <Input label="Username" type="text" id="username" {...username} />
-        <Input label="Password" type="password" id="password" {...password} />
-        {loading ? <Button disabled>Carregando...</Button> : <Button>Entrar</Button>}
-        <Error error={error} />
-      </form>
-      <Link className={styles.forgot} to="/login/forgot">Esqueci minha senha</Link>
-      <div className={styles.register}>
-        <h2 className={styles.subtitle}>Cadastre-se</h2>
-        <p>Não possui login? Cadastre-se agora!</p>
-      </div>
-      <Link className={stylesBtn.button} to="/login/create">Cadastrar</Link>
-    </section>
+      <section className="animeLeft">
+        <h1 className="title">Login</h1>
+        <form className={styles.form} action="" onSubmit={handleSubmit}>
+          <Input label="Username" type="text" id="username" {...username} />
+          <Input label="Password" type="password" id="password" {...password} />
+          {loading ? <Button disabled>Carregando...</Button> : <Button>Entrar</Button>}
+          <Error error={error} />
+        </form>
+        <Link className={styles.forgot} to="/login/forgot">Esqueci minha senha</Link>
+        <div className={styles.register}>
+          <h2 className={styles.subtitle}>Cadastre-se</h2>
+          <p>Não possui login? Cadastre-se agora!</p>
+        </div>
+        <Link className={stylesBtn.button} to="/login/create">Cadastrar</Link>
+      </section>
+    </>
   );
 };
 
